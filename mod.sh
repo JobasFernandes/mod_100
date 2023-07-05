@@ -21,7 +21,7 @@ while true; do
             unzip -o mod_login.zip -d .
             rm mod_login.zip
             cp -Rf /home/deploy/mod_100/mod_login/assets/* /home/deploy/multi100/frontend/src/assets
-            cp -f /home/deploy/mod_100/mod_login/index.js /home/deploy/multi100/frontend/src/pages/login
+            cp -f /home/deploy/mod_100/mod_login/index.js /home/deploy/multi100/frontend/src/pages/Login
             cp -Rf /home/deploy/mod_100/mod_login/public/* /home/deploy/multi100/frontend/public
 
             sed -i "s/REACT_APP_NAME_SYSTEM=\"Multi100\"/REACT_APP_NAME_SYSTEM=\"$empresa\"/" /home/deploy/multi100/frontend/.env
