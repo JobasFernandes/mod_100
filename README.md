@@ -1,6 +1,6 @@
 # Personalizar login
 ```bash
-cd /home
+cd /home/deploy
 ```  
 ```bash
 git clone https://github.com/JobasFernandes/mod_100.git
