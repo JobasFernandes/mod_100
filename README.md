@@ -1,5 +1,4 @@
-# Personalizar login Multi100
-
+# Personalizar login
 ```bash
 cd /home
 ```  
