@@ -14,17 +14,18 @@ while true; do
         1)
             read -p "Qual o nome que gostaria para o app Multi100? " empresa
 
-            sudo su deploy
-            cd /home/mod100
+            sudo -E -u deploy bash -c '
+            cd /home/mod_100
             unzip -o mod_login.zip -d .
-            rm /home/mod100/mod_login.zip
-            cp -Rf /home/mod100/mod_login/assets/* /home/multi100/frontend/src/assets
-            cp -f /home/mod100/mod_login/index.js /home/multi100/frontend/src/pages/login
-            cp -Rf /home/mod100/mod_login/public/* /home/multi100/frontend/public
+            rm mod_login.zip
+            cp -Rf /home/mod_100/assets/* /home/multi100/frontend/src/assets
+            cp -f /home/mod_100/index.js /home/multi100/frontend/src/pages/login
+            cp -Rf /home/mod_100/public/* /home/multi100/frontend/public
+            '
 
             sed -i "s/REACT_APP_NAME_SYSTEM=\"Multi100\"/REACT_APP_NAME_SYSTEM=\"$empresa\"/" /home/deploy/multi100/frontend/.env
 
-            cd /home/multi100/frontend/
+            cd /home/multi100/frontend
             npm install react-lottie --force
 
             read -p "Pressione qualquer tecla para continuar..."
@@ -39,10 +40,11 @@ while true; do
             ;;
 
         3)
-            sudo su deploy
+            sudo -E -u deploy bash -c '
             cd /home/multi100/frontend
             npm run build
             pm2 restart all
+            '
 
             read -p "Pressione qualquer tecla para continuar..."
             ;;
