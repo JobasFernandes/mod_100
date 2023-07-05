@@ -15,12 +15,12 @@ while true; do
             read -p "Qual o nome que gostaria para o app Multi100? " empresa
 
             sudo -E -u deploy bash -c '
-            cd /home/mod_100
+            cd /home/deploy/mod_100
             unzip -o mod_login.zip -d .
             rm mod_login.zip
-            cp -Rf /home/mod_100/assets/* /home/multi100/frontend/src/assets
-            cp -f /home/mod_100/index.js /home/multi100/frontend/src/pages/login
-            cp -Rf /home/mod_100/public/* /home/multi100/frontend/public
+            cp -Rf /home/deploy/mod_100/assets/* /home/multi100/frontend/src/assets
+            cp -f /home/deploy/mod_100/index.js /home/multi100/frontend/src/pages/login
+            cp -Rf /home/deploy/mod_100/public/* /home/multi100/frontend/public
             '
 
             sed -i "s/REACT_APP_NAME_SYSTEM=\"Multi100\"/REACT_APP_NAME_SYSTEM=\"$empresa\"/" /home/deploy/multi100/frontend/.env
