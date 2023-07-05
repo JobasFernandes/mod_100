@@ -1,8 +1,11 @@
 # Personalizar login Multi100
 
 ```bash
-https://demo.pnztech.com.br/login
+cd /home
 ```  
-```cd /home```
-```git clone https://github.com/JobasFernandes/mod_100.git```
-```sudo chmod +x mod.sh && ./mod.sh```
+```bash
+git clone https://github.com/JobasFernandes/mod_100.git
+```
+```bash
+sudo chmod +x mod.sh && ./mod.sh
+``` 
