@@ -1,4 +1,8 @@
 # Personalizar login
+
+```bash
+sudo su deploy
+```  
 ```bash
 cd /home/deploy
 ```  
