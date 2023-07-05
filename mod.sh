@@ -47,7 +47,7 @@ EOF
             sleep 2
             
             sudo su - deploy <<EOF
-            cd /home/multi100/frontend
+            cd /home/deploy/multi100/frontend
             npm run build
             pm2 restart all
 EOF
