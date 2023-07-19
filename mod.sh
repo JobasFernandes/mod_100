@@ -17,15 +17,16 @@ while true; do
             sleep 2
             
             sudo su - deploy <<EOF
-              cd /home/deploy/mod_100
+            cd /home/deploy/mod_100
             unzip -o mod_login.zip -d .
-            rm mod_login.zip
             cp -Rf /home/deploy/mod_100/mod_login/assets/* /home/deploy/multi100/frontend/src/assets
-            cp -f /home/deploy/mod_100/mod_login/index.js /home/deploy/multi100/frontend/src/pages/Login
+            cp -f /home/deploy/mod_100/mod_login/components/TicketsManagerTabs/index.js /home/deploy/multi100/frontend/src/components/TicketsManagerTabs
+            cp -f /home/deploy/mod_100/mod_login/pages/Login/index.js /home/deploy/multi100/frontend/src/pages/Login
+            cp -f /home/deploy/mod_100/mod_login/pages/Signup/index.js /home/deploy/multi100/frontend/src/pages/Login
+            cp -f /home/deploy/mod_100/mod_login/layout/MainListItems.js /home/deploy/multi100/frontend/src/layout
             cp -Rf /home/deploy/mod_100/mod_login/public/* /home/deploy/multi100/frontend/public
-
+            rm -rf mod_login
             sed -i "s/REACT_APP_NAME_SYSTEM=\"Multi100\"/REACT_APP_NAME_SYSTEM=\"$empresa\"/" /home/deploy/multi100/frontend/.env
-
             cd /home/deploy/multi100/frontend
             npm install react-lottie --force
 EOF
