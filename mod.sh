@@ -22,7 +22,7 @@ while true; do
             cp -Rf /home/deploy/mod_100/mod_login/assets/* /home/deploy/multi100/frontend/src/assets
             cp -f /home/deploy/mod_100/mod_login/components/TicketsManagerTabs/index.js /home/deploy/multi100/frontend/src/components/TicketsManagerTabs
             cp -f /home/deploy/mod_100/mod_login/pages/Login/index.js /home/deploy/multi100/frontend/src/pages/Login
-            cp -f /home/deploy/mod_100/mod_login/pages/Signup/index.js /home/deploy/multi100/frontend/src/pages/Login
+            cp -f /home/deploy/mod_100/mod_login/pages/Signup/index.js /home/deploy/multi100/frontend/src/pages/Signup
             cp -f /home/deploy/mod_100/mod_login/layout/MainListItems.js /home/deploy/multi100/frontend/src/layout
             cp -Rf /home/deploy/mod_100/mod_login/public/* /home/deploy/multi100/frontend/public
             rm -rf mod_login
